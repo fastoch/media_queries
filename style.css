@@ -9,5 +9,94 @@
 body {
   font: 1.5rem "Nunito", sans-serif; /* font-size & font-family */
   min-height: 100vh;
+
+  background-color: #475569; /* fallback, in case the background image doesn't load */
+  background-image: radial-gradient(whitesmoke, #475569);
+  display: flex; /* makes our body a flex container */
+  flex-direction: column; /* row is the default and we want the flex items to stack */
 }
 
+header, nav, main, footer {
+  display: grid;
+  place-content: center; /* centers elements horizontally */
+  grid-template-columns: 100%;
+  text-align: center;
+}
+
+header, footer {
+  position: sticky;
+  background-color: #1e293b;
+  color: whitesmoke;
+}
+
+header {
+  top: 0;
+}
+
+nav {
+  background-color: white;
+  color: black;
+  padding: 0.5rem;
+  border-bottom: 2px solid black;
+}
+
+main {
+  flex-grow: 1; /* the main element grows to fill out whatever space is available */
+}
+
+footer {
+  bottom: 0;
+}
+
+/* SMALL */
+@media screen and (min-width: 576px) {
+  body {
+    background-color: green;
+    background-image: radial-gradient(whitesmoke, green);
+
+  }
+
+  nav {
+    display: none;
+  }
+}
+
+/* MEDIUM */
+@media screen and (min-width: 768px) {
+  body {
+    background-color: gold;
+    background-image: radial-gradient(whitesmoke, gold);
+  }
+}
+
+/* LARGE */
+@media screen and (min-width: 992px) {
+  body {
+    background-color: firebrick;
+    background-image: radial-gradient(whitesmoke, firebrick);
+  }
+}
+
+/* EXTRA-LARGE */
+@media screen and (min-width: 1200px) {
+  body {
+    background-color: rebeccapurple;
+    background-image: radial-gradient(whitesmoke, rebeccapurple);
+  }
+
+}
+/* MOBILE DEVICE LANDSCAPE */
+@media screen and (max-height: 425px) and (min-aspect-ratio: 7/4) {
+  body {
+    background-color: dodgerblue;
+    background-image: radial-gradient(whitesmoke, dodgerblue);
+  }
+
+  h1, h2 {
+    font-size: 1.5rem;
+  }
+
+  nav {
+    display: none;
+  }
+}
